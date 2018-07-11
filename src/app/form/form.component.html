@@ -1,0 +1,39 @@
+<form #passageForm="ngForm" (ngSubmit)="submitPassage(passageForm)">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add Passage</h3>
+    </div>
+    <div class="panel-body">
+
+      <div class="form-group">
+        <label for="lpn">LPN   </label>
+        <input id="lpn" type="text" class="form-control"
+               name="lpn" [(ngModel)]="lpn">
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="Contry Code">Contry Code   </label>
+        <select name="cc" [(ngModel)]="cc">
+          <option value="AT">AT</option>
+          <option value="DE">DE</option>
+          <option value="FR">FR</option>
+        </select>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="Vehicle Type">Vehicle Type   </label>
+        <select name="type" [(ngModel)]="type">
+          <option value="1">TRUCK</option>
+          <option value="2">CAR</option>
+          <option value="3">MOTORCYCLE</option>
+        </select>
+      </div>
+      <br>
+    </div>
+    <div class="panel-footer">
+      <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+  </div>
+</form>
+<br>
+{{passageForm.value | json}}
